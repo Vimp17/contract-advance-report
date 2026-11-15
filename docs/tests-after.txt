@@ -1,0 +1,21 @@
+test_acceptance_and_cancellation_boundaries (test_report.ReportTests.test_acceptance_and_cancellation_boundaries) ... ok
+test_cli_outputs_and_invalid_date (test_report.ReportTests.test_cli_outputs_and_invalid_date) ... ok
+test_cli_prevents_overwriting_input (test_report.ReportTests.test_cli_prevents_overwriting_input) ... ok
+test_conservation_and_nonnegative_balances_across_dates (test_report.ReportTests.test_conservation_and_nonnegative_balances_across_dates) ... ok
+test_contract_without_works_keeps_unallocated_advance (test_report.ReportTests.test_contract_without_works_keeps_unallocated_advance) ... ok
+test_direct_overpayment_and_cancelled_work_are_not_lost (test_report.ReportTests.test_direct_overpayment_and_cancelled_work_are_not_lost) ... ok
+test_future_and_queued_payments (test_report.ReportTests.test_future_and_queued_payments) ... ok
+test_invalid_data_is_rejected_with_context (test_report.ReportTests.test_invalid_data_is_rejected_with_context) ... ok
+test_kopeck_allocation_and_tied_acceptance_dates (test_report.ReportTests.test_kopeck_allocation_and_tied_acceptance_dates) ... ok
+test_malformed_csv_is_rejected (test_report.ReportTests.test_malformed_csv_is_rejected) ... ok
+test_money_is_exact_and_strict (test_report.ReportTests.test_money_is_exact_and_strict) ... ok
+test_reference_contracts (test_report.ReportTests.test_reference_contracts) ... ok
+test_reference_works_and_direct_payment_priority (test_report.ReportTests.test_reference_works_and_direct_payment_priority) ... ok
+test_refund_boundary (test_report.ReportTests.test_refund_boundary) ... ok
+test_row_order_does_not_change_report (test_report.ReportTests.test_row_order_does_not_change_report) ... ok
+test_unsigned_contracts_excluded (test_report.ReportTests.test_unsigned_contracts_excluded) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.241s
+
+OK

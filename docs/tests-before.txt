@@ -1,0 +1,21 @@
+test_report (unittest.loader._FailedTest.test_report) ... ERROR
+
+======================================================================
+ERROR: test_report (unittest.loader._FailedTest.test_report)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_report
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/home/matthew/Documents/Codex/2026-11-15/new-chat/outputs/contract-report/tests/test_report.py", line 11, in <module>
+    from report import DataError, build_report, load_data, money, parse_money
+ModuleNotFoundError: No module named 'report'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

@@ -1,0 +1,152 @@
+{
+  "as_of": "2026-11-10",
+  "allocation_policy": "direct-first; done by completed_at/work_id; planned by work_id; cancelled excluded from pool",
+  "works": [
+    {
+      "contract_id": "D-1",
+      "work_id": "W-11",
+      "title": "Съёмка: весенняя коллекция",
+      "status": "done",
+      "price": "100000.00",
+      "effective_price": "100000.00",
+      "direct_paid": "0.00",
+      "allocated_advance": "100000.00",
+      "paid": "100000.00",
+      "remaining": "0.00",
+      "overpaid": "0.00"
+    },
+    {
+      "contract_id": "D-1",
+      "work_id": "W-12",
+      "title": "Съёмка: лето",
+      "status": "done",
+      "price": "100000.00",
+      "effective_price": "100000.00",
+      "direct_paid": "0.00",
+      "allocated_advance": "100000.00",
+      "paid": "100000.00",
+      "remaining": "0.00",
+      "overpaid": "0.00"
+    },
+    {
+      "contract_id": "D-1",
+      "work_id": "W-13",
+      "title": "Съёмка: аксессуары",
+      "status": "cancelled",
+      "price": "100000.00",
+      "effective_price": "0.00",
+      "direct_paid": "0.00",
+      "allocated_advance": "0.00",
+      "paid": "0.00",
+      "remaining": "0.00",
+      "overpaid": "0.00"
+    },
+    {
+      "contract_id": "D-1",
+      "work_id": "W-14",
+      "title": "Съёмка: осень",
+      "status": "done",
+      "price": "100000.00",
+      "effective_price": "100000.00",
+      "direct_paid": "15000.00",
+      "allocated_advance": "85000.00",
+      "paid": "100000.00",
+      "remaining": "0.00",
+      "overpaid": "0.00"
+    },
+    {
+      "contract_id": "D-1",
+      "work_id": "W-15",
+      "title": "Съёмка: зима",
+      "status": "planned",
+      "price": "100000.00",
+      "effective_price": "100000.00",
+      "direct_paid": "0.00",
+      "allocated_advance": "15000.00",
+      "paid": "15000.00",
+      "remaining": "85000.00",
+      "overpaid": "0.00"
+    },
+    {
+      "contract_id": "D-1",
+      "work_id": "W-16",
+      "title": "Съёмка: новогодняя",
+      "status": "planned",
+      "price": "100000.00",
+      "effective_price": "100000.00",
+      "direct_paid": "0.00",
+      "allocated_advance": "0.00",
+      "paid": "0.00",
+      "remaining": "100000.00",
+      "overpaid": "0.00"
+    },
+    {
+      "contract_id": "D-2",
+      "work_id": "W-21",
+      "title": "Логотип",
+      "status": "done",
+      "price": "20000.00",
+      "effective_price": "20000.00",
+      "direct_paid": "0.00",
+      "allocated_advance": "20000.00",
+      "paid": "20000.00",
+      "remaining": "0.00",
+      "overpaid": "0.00"
+    },
+    {
+      "contract_id": "D-2",
+      "work_id": "W-22",
+      "title": "Фирменный стиль",
+      "status": "done",
+      "price": "30000.00",
+      "effective_price": "30000.00",
+      "direct_paid": "0.00",
+      "allocated_advance": "30000.00",
+      "paid": "30000.00",
+      "remaining": "0.00",
+      "overpaid": "0.00"
+    },
+    {
+      "contract_id": "D-2",
+      "work_id": "W-23",
+      "title": "Упаковка",
+      "status": "planned",
+      "price": "40000.00",
+      "effective_price": "40000.00",
+      "direct_paid": "0.00",
+      "allocated_advance": "25000.00",
+      "paid": "25000.00",
+      "remaining": "15000.00",
+      "overpaid": "0.00"
+    }
+  ],
+  "contracts": [
+    {
+      "contract_id": "D-1",
+      "contractor": "Студия «Свет»",
+      "amount": "600000.00",
+      "active_price": "500000.00",
+      "paid": "315000.00",
+      "allocated": "315000.00",
+      "unallocated": "0.00",
+      "remaining": "185000.00",
+      "overpaid": "0.00",
+      "contract_balance": "285000.00"
+    },
+    {
+      "contract_id": "D-2",
+      "contractor": "Иван Петров, дизайнер",
+      "amount": "90000.00",
+      "active_price": "90000.00",
+      "paid": "75000.00",
+      "allocated": "75000.00",
+      "unallocated": "0.00",
+      "remaining": "15000.00",
+      "overpaid": "0.00",
+      "contract_balance": "15000.00"
+    }
+  ],
+  "warnings": [
+    "D-1: сумма действующих работ 500000.00 отличается от договора 600000.00"
+  ]
+}
