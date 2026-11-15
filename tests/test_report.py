@@ -119,6 +119,44 @@ class ReportTests(unittest.TestCase):
             c = r['contracts'][0]
             self.assertEqual(sum(w['paid'] for w in r['works'] if w['contract_id'] == 'D-1') + c['unallocated'], c['paid'])
 
+    def test_kopeck_allocation_and_tied_acceptance_dates(self):
+        path = self.modified_data('works.csv', lambda rows: [
+            row.update(price='0.03', completed_at='2026-10-01')
+            for row in rows if row['work_id'] in {'W-21', 'W-22'}])
+        with (path / 'payments.csv').open(encoding='utf-8', newline='') as f:
+            reader = csv.DictReader(f)
+            fields, rows = reader.fieldnames, list(reader)
+        rows = [r for r in rows if r['contract_id'] != 'D-2' or r['payment_id'] == 'P-5']
+        next(r for r in rows if r['payment_id'] == 'P-5')['amount'] = '0.05'
+        with (path / 'payments.csv').open('w', encoding='utf-8', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows(rows)
+        report = self.report(data=load_data(path))
+        works = {w['work_id']: w for w in report['works']}
+        self.assertEqual((works['W-21']['paid'], works['W-22']['paid']), (3, 2))
+        self.assertEqual(report['contracts'][1]['paid'], 5)
+
+    def test_contract_without_works_keeps_unallocated_advance(self):
+        data = {**self.data, 'works': [w for w in self.data['works'] if w['contract_id'] != 'D-2']}
+        c = self.report(data=data)['contracts'][1]
+        self.assertEqual((c['paid'], c['unallocated'], c['remaining']), (7500000, 7500000, 0))
+
+    def test_malformed_csv_is_rejected(self):
+        path = self.modified_data('works.csv', lambda rows: None)
+        with (path / 'works.csv').open('a', encoding='utf-8') as f:
+            f.write('missing,columns\n')
+        with self.assertRaisesRegex(DataError, 'works.csv'):
+            load_data(path)
+
+    def test_cli_prevents_overwriting_input(self):
+        path = self.modified_data('works.csv', lambda rows: None)
+        before = (path / 'works.csv').read_bytes()
+        run = subprocess.run([sys.executable, str(ROOT / 'report.py'), '--date', '2026-11-10',
+                              '--data-dir', str(path), '--output-dir', str(path)], capture_output=True, text=True)
+        self.assertEqual(run.returncode, 2)
+        self.assertEqual((path / 'works.csv').read_bytes(), before)
+
     def test_cli_outputs_and_invalid_date(self):
         with tempfile.TemporaryDirectory() as tmp:
             run = subprocess.run([sys.executable, str(ROOT / 'report.py'), '--date', '2026-11-10',
